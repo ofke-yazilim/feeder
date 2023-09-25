@@ -15,13 +15,15 @@ class AuthRepository implements AuthInterface {
         if(\Auth::attempt($request->only(['email','password']))){
             // Session one for per user
             $hash = bcrypt(auth()->user()->getKey().microtime());
-            if($request->is('api/*')){
-                \Cache::put('userhash', $hash);
-            } else{
-                \Session::put('userhash', $hash);
-            }
+//            if($request->is('api/*')){
+//                \Cache::put('userhash', $hash);
+//            } else{
+//                \Session::put('userhash', $hash);
+//            }
+            \Session::put('userhash', $hash);
 
-            \Auth::user()->session_id = $hash;
+            \Auth::user()->session_id    = $hash;
+            \Auth::user()->access_token  = hash('sha256', time().implode('',$request->all()));
             \Auth::user()->save();
             // Session one for per user
 
@@ -37,7 +39,7 @@ class AuthRepository implements AuthInterface {
 
     public function logout(){
         try {
-            \Auth::user()->access_token = null;
+            //\Auth::user()->access_token = null;
             \Auth::user()->save();
             \Auth::logout();
             return true;

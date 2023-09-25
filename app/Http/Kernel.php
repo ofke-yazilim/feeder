@@ -3,8 +3,10 @@
 namespace App\Http;
 
 use App\Http\Middleware\Authenticate;
-use App\Http\Middleware\AuthenticateApiFeeder;
+use App\Http\Middleware\AuthorizationApiFeeder;
 use App\Http\Middleware\AuthenticateFeeder;
+use App\Http\Middleware\AuthorizationFeeder;
+use App\Http\Middleware\Faker;
 use App\Http\Middleware\OneSessionForPerUser;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -41,7 +43,6 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             OneSessionForPerUser::class,
-            //AuthenticateFeeder::class,
         ],
 
         'api' => [
@@ -49,7 +50,6 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\ThrottleRequests::class.':api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             OneSessionForPerUser::class,
-            //AuthenticateFeeder::class,
         ],
     ];
 
@@ -72,7 +72,8 @@ class Kernel extends HttpKernel
         'signed' => \App\Http\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-        'auth.feeder'=>AuthenticateFeeder::class,
-        'auth.api.feeder'=>AuthenticateApiFeeder::class,
+        'authorization.feeder'=>AuthorizationFeeder::class,
+        'authorization.api.feeder'=>AuthorizationApiFeeder::class,
+        'faker'=>Faker::class,
     ];
 }

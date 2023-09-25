@@ -40,7 +40,7 @@ class AuthController extends Controller
             $response->status   = 401;
             $response->messages = ['message'=>'Token is incorrect or you verifed before.','type'=>'error'];
             $user = User::where([['validate_token',$request->validate_token],['email',$request->email]])->whereNull('email_verified_at')->first();
-            $response->redirect = route('web.twit.index');
+            $response->redirect = route('web.home');
             if($user) {
                 $response->status   = 200;
                 $response->messages = ['message'=>'Your account has been verified','type'=>'success'];

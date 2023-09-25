@@ -13,8 +13,8 @@ class UserObserver
     public function created(User $user): void
     {
         // Sisteme son 20 twit yükleniyor.
-
-        FeederService::get_list_static(20,$user->id,0);
+        $feeder_service = new FeederService();
+        $feeder_service->get_list(20,$user->id,0);
     }
 
     /**

@@ -24,7 +24,7 @@ class Helper
         $response->status   = $response->status??504;
         $response->messages = count($response->messages)>0?$response->messages:['message'=>'Hata Oluştu','type'=>'error'];
         $response->redirect = route('web.home');
-        \Log::channel('error')->error($e->getMessage()." - ".$e->getFile()." - UserController(create) - ".$e->getLine());
+        \Log::channel('error')->error($e->getMessage()." - ".$e->getFile()." - ".$e->getLine());
         return self::render_response($response);
     }
 

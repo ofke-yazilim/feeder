@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class OneSessionForPerUser
+class AuthorizationApiFeeder
 {
     /**
      * Handle an incoming request.
@@ -15,18 +15,21 @@ class OneSessionForPerUser
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(\Auth::check()){
-            $session_id = \Session::getId();
-            // The only login for per user
-            if(\Session::get('userhash') != \Auth::user()->session_id){
-                \Auth::logout();
+        if($request->is('api/*')){
+            $bearer_token = $request->bearerToken();
+            $user         = \App\Models\User::where('access_token',$bearer_token)->first();
+            if($user) {
+                \auth()->login($user);
+                if($request->json()->all()){
+                    \request()->merge($request->json()->all());
+                }
+            } else{
                 $feeder_response                = new \App\Helpers\Response();
                 $feeder_response->status        = 401;
-                $feeder_response->messages      = ['message'=>'You logined on another place.','type'=>'error'];
+                $feeder_response->messages      = ['message'=>'Unauthorized attempt','type'=>'error'];
                 return \Helper::render_response($feeder_response);
             }
         }
-
         return $next($request);
     }
 }
