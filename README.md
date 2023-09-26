@@ -24,3 +24,8 @@ projenin **rest api** şeklinde çalışan örneklerine ise aşağıdaki linkler
 - ``php artisan key:generate`` komudu çalıştırılarak proje için APP_KEY üretilir.
 - Hemen ardından ``php artisan serve`` denilerek proje local bilgisayarda ayağıya kaldırılır.
 - Projimiz local bilgisayarda [http://127.0.0.1:8000/](http://127.0.0.1:8000/) adresinde çalışmaya başlar. Projenin web halinde çalışan halini bu adresten takip edebilirsiniz.
+### Uygulama Hakkında 
+- Bir kullanıcı Register edildikten sonra kullanıcının verified edilmesi gerekmektedir. 
+Bu işlemi yapmak için öncelikle login olunmalıdır. Ardından profil sekmesine gidilmeli ve 
+sekme içindeki onaylama linki kullanılmalıdır. Api versiyonun da ise ilgili verified 
+linki response içerisinde gönderilmektedir.
