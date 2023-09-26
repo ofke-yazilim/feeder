@@ -29,3 +29,14 @@ projenin **rest api** şeklinde çalışan örneklerine ise aşağıdaki linkler
 Bu işlemi yapmak için öncelikle login olunmalıdır. Ardından profil sekmesine gidilmeli ve 
 sekme içindeki onaylama linki kullanılmalıdır. Api versiyonun da ise ilgili verified 
 linki response içerisinde gönderilmektedir.
+- Api versiyonun nasıl çalıştığını görmek için aşağıdaki Postman collectionlarından size uygun olanını import edebilirsiniz.
+- Apiler ***Bearer Token*** kullanarak çalışmaktadır.
+- Api aracılığı ile login olunduktan sonra response içersinde dönen ****access_token**** Bearer Token değerini temsil eder.
+###Kullanılan Yazılım Terminolojileri
+- Repository desing Pattern kullanıldı. İncelemek için proje içerisinde ``app/services/Repositories`` dizinine göz atabilirsiniz.
+- Middleware kullanıldı.
+>Middleware dosyalarına **app/Http/Middleware** dizininnden ulaşabilirsiniz.
+  1) ``OneSessionForPerUser middleware`` bir kullanıcı için tek session takibini sağlar.
+  2) ``AuthorizationFeeder middeleware`` web ortamı için yetki olaylarını takip eder.
+  3) ``AuthorizationApiFeeder middleware`` api ortamı için yetki olaylarını takip eder.
+
