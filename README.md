@@ -25,6 +25,9 @@ projenin **rest api** şeklinde çalışan örneklerine ise aşağıdaki linkler
 - Hemen ardından ``php artisan serve`` denilerek proje local bilgisayarda ayağıya kaldırılır.
 - Projimiz local bilgisayarda [http://127.0.0.1:8000/](http://127.0.0.1:8000/) adresinde çalışmaya başlar. Projenin web halinde çalışan halini bu adresten takip edebilirsiniz.
 ### Uygulama Hakkında 
+- Uygulama web servis mimarisinde çalışmaktadır. Hem web hem de api aynı Controller, aynı Model ve aynı fonksiyonları kullanmaktadır. 
+- Uygulamada twitter feeder servisleri kullanılmamış yerine mock servis yazılmıştır. Mock servise entegra olmamızı sağlayan 
+  class : ``app\Services\FeederService``
 - Bir kullanıcı Register edildikten sonra kullanıcının verified edilmesi gerekmektedir. 
 Bu işlemi yapmak için öncelikle login olunmalıdır. Ardından profil sekmesine gidilmeli ve 
 sekme içindeki onaylama linki kullanılmalıdır. Api versiyonun da ise ilgili verified 
@@ -36,6 +39,8 @@ linki response içerisinde gönderilmektedir.
 - Api aracılığı ile login olunduktan sonra response içersinde dönen ****access_token**** Bearer Token değerini temsil eder.
 ### Kullanılan Yazılım Terminolojileri
 - Repository desing Pattern kullanıldı. İncelemek için proje içerisinde ``app/services/Repositories`` dizinine göz atabilirsiniz.
+- Kullanılan Observer classları app/Observers dizini içerisinde bulunmaktadır.
+- Loglar **file** içerisine yazıldı. Projeye ait tüm logları. ``storage/logs`` dizini alrında takip edebilrsiniz.
 - Middleware kullanıldı.
      >Middleware dosyalarına **app/Http/Middleware** dizininnden ulaşabilirsiniz.
    1) ``OneSessionForPerUser middleware`` bir kullanıcı için tek session takibini sağlar.
