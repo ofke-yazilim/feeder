@@ -21,7 +21,7 @@ projenin **rest api** şeklinde çalışan örneklerine ise aşağıdaki linkler
     DB_PASSWORD=
  </pre>
 - Terminal ekranı açılır ve proje dizinine girilir. ``php artisan migrate `` komutu çalıştırılarak. Database içerisinde ilgili tabloların oluşturulması sağlanır.
-- ``php artisan key:generate`` komudu çalıştırılarak proje için APP_KEY üretilir.
+- ``php artisan key:generate`` komutu çalıştırılarak proje için APP_KEY üretilir.
 - Hemen ardından ``php artisan serve`` denilerek proje local bilgisayarda ayağıya kaldırılır.
 - Projimiz local bilgisayarda [http://127.0.0.1:8000/](http://127.0.0.1:8000/) adresinde çalışmaya başlar. Projenin web halinde çalışan halini bu adresten takip edebilirsiniz.
 ### Uygulama Hakkında 
@@ -39,8 +39,8 @@ linki response içerisinde gönderilmektedir.
 - Api aracılığı ile login olunduktan sonra response içersinde dönen ****access_token**** Bearer Token değerini temsil eder.
 ### Kullanılan Yazılım Terminolojileri
 - Repository desing Pattern kullanıldı. İncelemek için proje içerisinde ``app/services/Repositories`` dizinine göz atabilirsiniz.
-- Kullanılan Observer classları app/Observers dizini içerisinde bulunmaktadır.
-- Loglar **file** içerisine yazıldı. Projeye ait tüm logları. ``storage/logs`` dizini alrında takip edebilrsiniz.
+- Kullanılan ***Observer*** classları ``app/Observers`` dizini içerisinde bulunmaktadır.
+- Loglar **file** içerisine yazıldı. Projeye ait tüm logları. ``storage/logs`` dizini altında takip edebilirsiniz.
 - Middleware kullanıldı.
      >Middleware dosyalarına **app/Http/Middleware** dizininnden ulaşabilirsiniz.
    1) ``OneSessionForPerUser middleware`` bir kullanıcı için tek session takibini sağlar.
