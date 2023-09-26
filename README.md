@@ -1,8 +1,8 @@
 ## FEEDER PROJESİ
 Web servis mimarisini temsil eder. Projenin çalışan web haline [https://feeder.okesmez.com/](https://feeder.okesmez.com/) adresinden ulaşablirsiniz.
 projenin **rest api** şeklinde çalışan örneklerine ise aşağıdaki linklerde bulunan postman collectionlarını çalıştırarak ulaşabilirsiniz.
-- [Postman v2.0](https://feeder.okesmez.com/postman/v20.json)
-- [Postman v2.1](https://feeder.okesmez.com/postman/v21.json)
+- [Postman v2.0](https://feeder.okesmez.com/postman/v20.rar)
+- [Postman v2.1](https://feeder.okesmez.com/postman/v21.rar)
 ### Kullanılan Teknolojiler
 - Laravel Framework **10.10** versiyonu.
 - PHP **8.1** versiyonu.
@@ -30,8 +30,8 @@ Bu işlemi yapmak için öncelikle login olunmalıdır. Ardından profil sekmesi
 sekme içindeki onaylama linki kullanılmalıdır. Api versiyonun da ise ilgili verified 
 linki response içerisinde gönderilmektedir.
 - Api versiyonun nasıl çalıştığını görmek için aşağıdaki Postman collectionlarından size uygun olanını import edebilirsiniz.
-   1) [Postman v2.0](https://feeder.okesmez.com/postman/v20.json)
-   2) [Postman v2.1](https://feeder.okesmez.com/postman/v21.json)
+   1) [Postman v2.0](https://feeder.okesmez.com/postman/v20.rar)
+   2) [Postman v2.1](https://feeder.okesmez.com/postman/v21.rar)
 - Apiler ***Bearer Token*** kullanarak çalışmaktadır.
 - Api aracılığı ile login olunduktan sonra response içersinde dönen ****access_token**** Bearer Token değerini temsil eder.
 ### Kullanılan Yazılım Terminolojileri
