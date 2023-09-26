@@ -1,5 +1,5 @@
 ## FEEDER PROJESİ
-Web servis mimarisini temsil eder. Projenin çalışan web haline [https://feeder.okesmez.com/](https://feeder.okesmez.com/) adresinden ulaşablirsiniz.
+Web servis mimarisini temsil eder. Projenin çalışan web haline [https://feeder.okesmez.com/](https://feeder.okesmez.com/) adresinden ulaşabilirsiniz.
 projenin **rest api** şeklinde çalışan örneklerine ise aşağıdaki linklerde bulunan postman collectionlarını çalıştırarak ulaşabilirsiniz.
 - [Postman v2.0](https://feeder.okesmez.com/postman/v20.rar)
 - [Postman v2.1](https://feeder.okesmez.com/postman/v21.rar)
@@ -20,13 +20,13 @@ projenin **rest api** şeklinde çalışan örneklerine ise aşağıdaki linkler
     DB_USERNAME=root  
     DB_PASSWORD=
  </pre>
-- Terminal ekranı açılır ve proje dizinine girilir. ``php artisan migrate `` komutu çalıştırılarak. Database içerisinde ilgili tabloların oluşturulması sağlanır.
-- ``php artisan key:generate`` komutu çalıştırılarak proje için APP_KEY üretilir.
+- Terminal ekranı açılır ve proje dizinine girilir. ``php artisan migrate`` komutu çalıştırılarak. Database içerisinde ilgili tabloların oluşturulması sağlanır.
+- ``php artisan key:generate`` komutu çalıştırılarak proje için *APP_KEY* üretilir.
 - Hemen ardından ``php artisan serve`` denilerek proje local bilgisayarda ayağıya kaldırılır.
-- Projimiz local bilgisayarda [http://127.0.0.1:8000/](http://127.0.0.1:8000/) adresinde çalışmaya başlar. Projenin web halinde çalışan halini bu adresten takip edebilirsiniz.
+- Projemiz local bilgisayarda [http://127.0.0.1:8000/](http://127.0.0.1:8000/) adresinde çalışmaya başlar. Projenin web halinde çalışan halini bu adresten takip edebilirsiniz.
 ### Uygulama Hakkında 
 - Uygulama web servis mimarisinde çalışmaktadır. Hem web hem de api aynı Controller, aynı Model ve aynı fonksiyonları kullanmaktadır. 
-- Uygulamada twitter feeder servisleri kullanılmamış yerine mock servis yazılmıştır. Mock servise entegra olmamızı sağlayan 
+- Uygulamada twitter feeder servisleri kullanılmamış yerine mock servis yazılmıştır. Mock servise entegre olmamızı sağlayan 
   class : ``app\Services\FeederService``
 - Bir kullanıcı Register edildikten sonra kullanıcının verified edilmesi gerekmektedir. 
 Bu işlemi yapmak için öncelikle login olunmalıdır. Ardından profil sekmesine gidilmeli ve 
