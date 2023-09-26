@@ -30,6 +30,8 @@ Bu işlemi yapmak için öncelikle login olunmalıdır. Ardından profil sekmesi
 sekme içindeki onaylama linki kullanılmalıdır. Api versiyonun da ise ilgili verified 
 linki response içerisinde gönderilmektedir.
 - Api versiyonun nasıl çalıştığını görmek için aşağıdaki Postman collectionlarından size uygun olanını import edebilirsiniz.
+   1) [Postman v2.0](https://feeder.okesmez.com/postman/v20.json)
+   2) [Postman v2.1](https://feeder.okesmez.com/postman/v21.json)
 - Apiler ***Bearer Token*** kullanarak çalışmaktadır.
 - Api aracılığı ile login olunduktan sonra response içersinde dönen ****access_token**** Bearer Token değerini temsil eder.
 ### Kullanılan Yazılım Terminolojileri
