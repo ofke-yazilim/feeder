@@ -13,12 +13,14 @@ projenin **rest api** şeklinde çalışan örneklerine ise aşağıdaki linkler
 - Proje dizinine gidilir ****.env.example**** dosyasının adı ****.env**** olarak değiştirilir.
 - ****.env**** dosyasında bulunan database ayarları sizin için uygun olacak şekilde girilir. Aşağıda düzenlemeniz gereken alanı görebilirsiniz.
  <pre>
-						DB_CONNECTION=mysql  
-						DB_HOST=127.0.0.1  
-						DB_PORT=3306  
-						DB_DATABASE=laravel  
-						DB_USERNAME=root  
-						DB_PASSWORD=
+                DB_CONNECTION=mysql  
+                DB_HOST=127.0.0.1  
+                DB_PORT=3306  
+                DB_DATABASE=laravel  
+                DB_USERNAME=root  
+                DB_PASSWORD=
  </pre>
 - Terminal ekranı açılır ve proje dizinine girilir. ``php artisan migrate `` komutu çalıştırılarak. Database içerisinde ilgili tabloların oluşturulması sağlanır.
+- ``php artisan key:generate`` komudu çalıştırılarak proje için APP_KEY üretilir.
 - Hemen ardından ``php artisan serve`` denilerek proje local bilgisayarda ayağıya kaldırılır.
+- Projimiz local bilgisayarda [http://127.0.0.1:8000/](http://127.0.0.1:8000/) adresinde çalışmaya başlar. Projenin web halinde çalışan halini bu adresten takip edebilirsiniz.
